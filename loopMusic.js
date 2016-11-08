@@ -5,3 +5,5 @@ remVoice.addEventListener('ended', function() {
 	}, false);
 	
 remVoice.play();
+remVoice.pause();
+remVoice.play();
