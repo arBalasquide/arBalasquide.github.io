@@ -16,3 +16,12 @@ body {
 	width: 550px;
 	
 }
+
+#time {
+	
+	position:absolute;
+	font-size: 250%;
+	top: 0;
+	left: 0;
+
+}

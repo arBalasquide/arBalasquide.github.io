@@ -2,7 +2,7 @@ body {
 
 	text-align: center;
 	font-family: "Courier New", Courier, monospace; 
-	background-image: url("confetti.gif"), url("background.jpg");
+	background-image: url("../img/confetti.gif"), url("../img/background.jpg");
 
 }
 
