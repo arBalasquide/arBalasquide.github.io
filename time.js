@@ -5,18 +5,24 @@ function start() {
     var m = t.getMinutes();
     var s = t.getSeconds();
 	
-	
+	var h = check(h);
+	var m = check(m);
+	var s = check(s);
 	
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
 	
     setTimeout(start, 500);
 }
 
-function check() {
+function check(x) { //makes it so the time looks like 9:01:01 instead of 9:1:1
 
-	// the time shows up as 8:0:0 instead of 8:00:00
-	//this function will fix it
-
+	if(x < 10){
+	
+		x =  "0" + x;
+	
+	}
+	
+	return x;
 }
 
 window.onload(start());

@@ -1,3 +1,22 @@
+a {
+
+	text-decoration: none;
+	color: inherit;
+
+}
+
+#grey {
+
+	color:grey;
+
+}
+
+li {
+
+	color:white;
+
+}
+
 img {
 
 	width: 200px;
@@ -8,20 +27,45 @@ body {
 	
 	text-align: center;
 	font-family: "Lucida Console", Monaco, monospace;
+	background-image: url("img/blackbackground.jpg");
+	color: white;
 	
 }
 
-#dandy {
+#nothing {
 
-	width: 550px;
+	font-size: 6px;
+
+}
+
+#adrian{
+
+	border-radius: 50%;
+	border-width:5px;	
+    border-style:outset;
+	border-color: grey;
 	
 }
 
 #time {
 	
-	position:absolute;
 	font-size: 250%;
+
+}
+
+
+#left {
+
+	position:absolute;
 	top: 0;
 	left: 0;
+
+}
+
+#right {
+
+	position:absolute;
+	top: 0;
+	right: 0;
 
 }
