@@ -1,20 +1,28 @@
-var questions = [];
+var words; //working on creating a txt list and being able to extract the info from it
 
-function getResult() {
+$.get("./words.txt", function(data){
+
+	words = data.split(',');
+	
+});
+
+//function getResult() {
 
 	
 
-}
+//}
 
-function start() {
+//function start() {
 
-	var question = ;
+//	var question = ;
 	
-	document.getElementById('result').innerHTML = question;
+//	document.getElementById('result').innerHTML = question;
 
-}
+//}
 
-window.onload(start());
+
+document.getElementById('question').innerHTML = words[0];
+//window.onload(start());
 
 
 // jisho.org/search/word
