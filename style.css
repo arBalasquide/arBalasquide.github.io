@@ -11,12 +11,6 @@ a {
 
 }
 
-li {
-
-	color:white;
-
-}
-
 img {
 
 	width: 200px;
@@ -58,7 +52,7 @@ body {
 
 	position:absolute;
 	top: 0;
-	left: 0;
+	left: -32px;
 
 }
 
@@ -66,6 +60,6 @@ body {
 
 	position:absolute;
 	top: 0;
-	right: 0;
+	right: 8px;
 
 }
