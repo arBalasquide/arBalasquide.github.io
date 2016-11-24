@@ -7,8 +7,36 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<p id="message">C:/ </p>
+		<div id="message-container">
+			<p id="message"></p>	
+		</div>
+		<div id="cursor"></div>	
 	</body>
 	<script src="main.js"></script>
+	<script id="blink">	
+		var on = true;
+		
+		function blink(){
+				
+			var x = document.getElementById('cursor');
+			if(on){
+			
+				x.style.opacity = "0.0";
+				
+				on = false;
+			}
+			
+			else if(!on){
+				
+				x.style.opacity = "1.0";
+				
+				on = true;			
+			}
+			
+			setTimeout(blink, 150);
+				
+		}
+		setTimeout(blink, 150);
+	</script>
 </html>
 
