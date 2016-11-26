@@ -1,22 +1,41 @@
-var message =  "Hello, stranger. Welcome to the unknown, where you will find nothing.";
+var messages =  ["Hello, stranger. Welcome to the unknown, where you will find nothing.", "What do you want me to do?", "Hmm, it might be possible"];
+
+var x = 0;
 
 var hold = "";
-var count = 0;
-var arrayMessage = message.split(''); 
+var mCount = 0;
+var fCount = 0;
 
 var c = "C:/"
 
 function typeMessage() {
 
-	var temp = arrayMessage[count];
-	var res = hold.concat(temp);
-	hold = res;
+	for(k = 0; k < messages.length - 1; k++){
 	
-	document.getElementById('message').innerHTML = c.concat(res);		
+		message = messages[fCount];
+		arrayMessage = message.split('');
+		var temp = arrayMessage[mCount];
+		var res = hold.concat(temp);
+		hold = res;
+			
+		var messageEl = $("<div/>").addClass("message");
+		var contentEl = $("<span/>").text("C:/" + res);
+		messageEl.append(contentEl);
+		$('#messages').append(messageEl);
+			
+		//document.getElementById('message').innerHTML = c.concat(res);		
+			
+		mCount++;
+			
+		if(mCount < arrayMessage.length)setTimeout(typeMessage, 100);
+		
+	}
 	
-	count++;
+	if(fCount < messages.length){
+		
+		fCount++;
+		setTimeout(typeMessage, 100);	
 	
-	if(count < arrayMessage.length)setTimeout(typeMessage, 100);
 }
 
-window.onload(typeMessage());	
+setTimeout(typeMessage, 100);	
