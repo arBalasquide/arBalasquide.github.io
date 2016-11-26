@@ -10,6 +10,7 @@ body {
 
 #cursor {
 
+	
     width: 8px;
     height: 16px;
     background: white;
@@ -18,8 +19,9 @@ body {
 
 }
 
-#message-container {
+#messages{
 
+	position:relative;
 	display: inline-block;
 	
 }

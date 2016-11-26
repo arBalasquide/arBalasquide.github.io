@@ -1,37 +1,54 @@
-var messages =  ["Hello, stranger. Welcome to the unknown, where you will find nothing.", "What do you want me to do?", "Hmm, it might be possible"];
+//Code done by zlr, executive director @ hackclub
+//Thanks for the help :)
 
-var hold = "";
-var mCount = 0;
-var fCount = 0;
+function typeMsg(msg, element, prefix, delay, callback) {
+  var arrMsg = msg.split('')
+  var char = arrMsg.shift()
+  var prefixToAdd = ""
 
-function typeMessage() {
+  // If the element is empty, then it's a new element and we need to add the
+  // prefix to it
+  if (element.innerHTML === "") {
+    prefixToAdd = prefix
+  }
 
-	for(k = 0; k < messages.length; k++){
-	
-		message = messages[fCount];
-		arrayMessage = message.split('');
-		var temp = arrayMessage[k];
-		var res = hold + temp;
-		hold = res;
-			
-		var messageEl = $("<div/>").addClass("message");
-		var contentEl = $("<span/>").text("C:/" + res);
-		messageEl.append(contentEl);
-		$('#messages').append(messageEl);
-			
-		//document.getElementById('message').innerHTML = c.concat(res);		
-			
-		mCount++;
-			
-		if(mCount < arrayMessage.length)setTimeout(typeMessage, 100);
-		
-	}
-	
-	if(fCount < messages.length){
-		
-		fCount++;
-		setTimeout(typeMessage, 100);	
-	
+  element.innerHTML += prefixToAdd + char
+
+  if (arrMsg.length > 0) {
+    var nextMsg = arrMsg.join('')
+
+    setTimeout(function () {
+      typeMsg(nextMsg, element, prefix, delay, callback)
+    }, delay)
+  } else {
+    callback()
+  }
 }
 
-setTimeout(typeMessage, 100);	
+function typeMsgs(msgs, msgsParent, elementType, prefix, delay, callback) {
+  var nextMsg = msgs.shift()
+  var element = document.createElement(elementType)
+
+  msgsParent.appendChild(element)
+
+  typeMsg(nextMsg, element, prefix, delay, function () {
+    if (msgs.length > 0) {
+      typeMsgs(msgs, msgsParent, elementType, prefix, delay, callback)
+    } else {
+      callback()
+    }
+  })
+}
+
+var msgsElementId = "messages"
+var msgs = [
+  "Hello, stranger. Welcome to the unknown, where you will find nothing.",
+  "You have stumbled upon here due to Adrian giving you a link",
+  "You're nothing special, now, scram!"
+]
+
+var msgsElement = document.getElementById(msgsElementId)
+
+typeMsgs(msgs, msgsElement, "p", "C:/", 100, function () {
+  console.log("Done typing!")
+})
