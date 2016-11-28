@@ -5,9 +5,9 @@ function start() {
     var m = t.getMinutes();
     var s = t.getSeconds();
 	
-	var h = check(h);
-	var m = check(m);
-	var s = check(s);
+	h = check(h);
+	m = check(m);
+	s = check(s);
 	
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
 	
