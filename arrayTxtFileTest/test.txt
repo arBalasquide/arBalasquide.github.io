@@ -1,3 +1,0 @@
-question: "¿Que instrumento se usa para verificar la temperatura?",
- choices: ["Contador Geiger", "Termómetro", "Barómetro", "Contador Gilberto"],
- correctAnswer: 1
