@@ -1,4 +1,4 @@
-//Code done by zlr, executive director @ hackclub
+//Help provided by zlr, executive director @ hackclub
 //Thanks for the help :)
 
 function typeMsg(msg, element, prefix, delay, callback) {
@@ -42,9 +42,7 @@ function typeMsgs(msgs, msgsParent, elementType, prefix, delay, callback) {
 
 var msgsElementId = "messages"
 var msgs = [
-  "Hello, stranger. Welcome to the unknown, where you will find nothing.",
-  "You have stumbled upon here due to Adrian giving you a link",
-  "You're nothing special, now, scram!"
+  "Hello, stranger. Welcome to Adrian's Website, where his projects can be viewed live."
 ]
 
 var msgsElement = document.getElementById(msgsElementId)
