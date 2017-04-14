@@ -49,7 +49,7 @@ li a{
 	
 	text-align: center;
 	font-family: "Lucida Console", Monaco, monospace;
-	background-image: url("img/blackbackground.jpg");
+	background-image: url("/img/blackbackground.jpg");
 	color: white;
 	
 }
